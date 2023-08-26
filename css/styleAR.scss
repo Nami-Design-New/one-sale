@@ -841,9 +841,6 @@ footer {
     padding: 32px 40px;
     .row {
       grid-template-columns: repeat(1, 1fr);
-      .col:first-child {
-        display: none;
-      }
       .col:last-child {
         padding-right: 0;
       }
