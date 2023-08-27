@@ -1,13 +1,14 @@
 @import "./sass/mixins";
 * {
   font-family: "Tajawal", serif;
+  direction: rtl;
 }
 body.noscroll {
   overflow: hidden !important;
 }
 nav {
-  padding: 20px 120px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 20px 120px;
   display: flex;
   justify-content: space-between;
   position: sticky;
@@ -23,11 +24,11 @@ nav {
       &::after {
         position: absolute;
         content: " ";
-        right: 50%;
+        left: 50%;
         width: 0;
         height: 2px;
         bottom: 2px;
-        transform: translateX(50%);
+        transform: translateX(-50%);
         background-color: $dark-green;
         transition: 0.3s ease-in-out;
       }
@@ -58,11 +59,15 @@ nav {
     a {
       @include centerFlex();
       padding: 5px 17px;
+      height: 42px;
       background: $main;
       color: $white;
       font-size: 14px;
       font-weight: 500;
       border-radius: 10px;
+      i {
+        font-size: 18px;
+      }
     }
     button {
       display: none;
@@ -97,10 +102,10 @@ nav {
     margin-bottom: 4rem;
     .decription-col {
       width: 50%;
-      padding-top: 100px;
+      padding-top: 40px;
       h1 {
-        line-height: 50px;
-        font-size: 28px;
+        line-height: 60px;
+        font-size: 32px;
       }
       .clients {
         display: flex;
@@ -114,7 +119,7 @@ nav {
             height: 60px;
             border-radius: 50%;
             overflow: hidden;
-            margin-right: -10px;
+            margin-left: -10px;
             img {
               object-fit: cover;
               width: 100%;
@@ -133,7 +138,7 @@ nav {
             line-height: 28px;
             i {
               color: #fbb326;
-              margin-right: 4px;
+              margin-left: 4px;
               font-size: 14px;
             }
           }
@@ -166,8 +171,8 @@ nav {
         position: relative;
         img {
           position: absolute;
-          right: 50%;
-          transform: translateX(50%);
+          left: 50%;
+          transform: translateX(-50%);
           top: -50px;
           max-height: 510px;
         }
@@ -189,11 +194,11 @@ nav {
       grid-template-columns: repeat(4, 1fr);
       padding: 80px 0 80px 0;
       .static-box {
-        border-right: 1px solid #dbdad9;
+        border-left: 1px solid #dbdad9;
         @include centerFlex();
         flex-direction: column;
         &:last-child {
-          border-right: none;
+          border-left: none;
         }
         .circle {
           width: 70px;
@@ -218,70 +223,6 @@ nav {
           font-size: 22px;
         }
       }
-    }
-  }
-  .appImgs {
-    padding-top: 8rem;
-    position: relative;
-    .swiper {
-      width: 100%;
-      padding: 30px 0;
-      position: relative;
-      .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: 234px;
-        height: 507px;
-        position: relative;
-        @media (max-width: 768px) {
-          width: 175.5px;
-          height: 380px;
-        }
-        img {
-          display: block;
-          width: 100%;
-          border-radius: 16px;
-        }
-      }
-      .frame {
-        width: 270px;
-        height: 535px;
-        @media (max-width: 768px) {
-          width: 202.5px;
-          height: 401px;
-        }
-        position: absolute;
-        top: 50%;
-        right: 50%;
-        transform: translate(50%, -50%);
-        z-index: 2;
-      }
-    }
-    .swiper-wrapper {
-      height: auto;
-    }
-    .swiper-3d .swiper-slide-shadow,
-    .swiper-3d .swiper-slide-shadow-bottom,
-    .swiper-3d .swiper-slide-shadow-left,
-    .swiper-3d .swiper-slide-shadow-right,
-    .swiper-3d .swiper-slide-shadow-top {
-      border-radius: 16px;
-      box-shadow: 0px 2px 4px #00000010;
-      border: 4px solid $white;
-    }
-    .swiper-3d .swiper-slide-shadow-left {
-      background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.2),
-        rgba(0, 0, 0, 0)
-      );
-    }
-    .swiper-3d .swiper-slide-shadow-right {
-      background: linear-gradient(
-        to left,
-        rgba(0, 0, 0, 0.2),
-        rgba(0, 0, 0, 0)
-      );
     }
   }
   .features {
@@ -330,6 +271,73 @@ nav {
           font-weight: 500;
         }
       }
+    }
+  }
+  .appImgs {
+    padding-top: 8rem;
+    position: relative;
+    p {
+      color: $main;
+    }
+    .swiper {
+      width: 100%;
+      padding: 30px 0;
+      position: relative;
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 234px;
+        height: 507px;
+        position: relative;
+        @media (max-width: 768px) {
+          width: 175.5px;
+          height: 380px;
+        }
+        img {
+          display: block;
+          width: 100%;
+          border-radius: 16px;
+        }
+      }
+      .frame {
+        width: 270px;
+        height: 535px;
+        @media (max-width: 768px) {
+          width: 202.5px;
+          height: 401px;
+        }
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+      }
+    }
+    .swiper-wrapper {
+      height: auto;
+    }
+    .swiper-3d .swiper-slide-shadow,
+    .swiper-3d .swiper-slide-shadow-bottom,
+    .swiper-3d .swiper-slide-shadow-left,
+    .swiper-3d .swiper-slide-shadow-right,
+    .swiper-3d .swiper-slide-shadow-top {
+      border-radius: 16px;
+      box-shadow: 0px 2px 4px #00000010;
+      border: 4px solid $white;
+    }
+    .swiper-3d .swiper-slide-shadow-left {
+      background: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0)
+      );
+    }
+    .swiper-3d .swiper-slide-shadow-right {
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0)
+      );
     }
   }
   .usage {
@@ -401,7 +409,7 @@ nav {
     .circl1 {
       position: absolute;
       top: 40px;
-      right: 40px;
+      left: 40px;
       width: 300px;
       height: 300px;
       z-index: -1;
@@ -471,58 +479,42 @@ footer {
   padding: 32px 100px;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: $secondary;
   .row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-direction: column;
     .logo img {
       max-width: 200px;
     }
-    .col {
-      h4 {
-        color: $dark-green;
-        font-size: 22px;
-        margin-bottom: 16px;
-      }
-      p {
-        color: $dark-green;
-        line-height: 28px;
-        padding: 5px 0;
-      }
-      .contact {
+    p {
+      width: min(100%, 600px);
+      text-align: center;
+      font-weight: 600;
+    }
+    .social {
+      display: flex;
+      gap: 16px;
+      a {
+        width: 40px;
+        height: 40px;
+        border: 1px solid $black;
         display: flex;
-        gap: 8px;
         align-items: center;
+        justify-content: center;
+        transition: all .3s ease-in-out;
+        border-radius: 50%;
         i {
-          font-size: 18px;
-          color: $dark-green;
+          color: $black;
         }
-        a {
-          color: $dark-green;
+        &:hover {
+          border-color: $dark-green;
+          i {
+            color: $dark-green;
+          }
         }
-      }
-      .social {
-        display: flex;
-        padding: 15px 0;
-        gap: 2rem;
-        a i {
-          color: $dark-green;
-          font-size: 22px;
-        }
-      }
-      .links {
-        margin-top: 32px;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        img {
-          max-height: 50px;
-        }
-      }
-      ul li a {
-        color: $dark-green;
-        font-weight: 500;
       }
     }
   }
@@ -549,8 +541,8 @@ footer {
     position: relative;
     top: unset;
     bottom: unset;
-    left: unset;
     right: unset;
+    left: unset;
     color: $main;
     .swiper-pagination-current {
       font-size: 30px;
@@ -566,9 +558,9 @@ footer {
   .swiper-button-next,
   .swiper-button-prev {
     position: relative;
-    left: unset;
-    top: unset;
     right: unset;
+    top: unset;
+    left: unset;
     bottom: unset;
     margin: 0 10px;
     cursor: pointer;
@@ -589,7 +581,7 @@ footer {
     }
   }
   .swiper-button-next {
-    left: unset;
+    right: unset;
   }
   .swiper-button-prev {
     &::after {
@@ -624,7 +616,7 @@ footer {
     .contact {
       .circl1 {
         top: 40px;
-        right: -40px;
+        left: -40px;
       }
       form {
         margin: 0 5rem;
@@ -649,9 +641,9 @@ footer {
         flex-direction: column;
         gap: 32px;
         position: absolute;
-        right: 50%;
+        left: 50%;
         top: 55%;
-        transform: translate(50%, -50%);
+        transform: translate(-50%, -50%);
       }
     }
     ul {
@@ -746,7 +738,7 @@ footer {
     .row {
       grid-template-columns: repeat(3, 1fr);
       .col:last-child {
-        padding-left: 32px;
+        padding-right: 32px;
       }
     }
   }
@@ -808,7 +800,7 @@ footer {
     .usage .cards {
       gap: 32px;
       .use-card {
-        height: 280px;
+        height: 340px;
       }
     }
     .contact form {
@@ -838,7 +830,7 @@ footer {
     .row {
       grid-template-columns: repeat(1, 1fr);
       .col:last-child {
-        padding-left: 0;
+        padding-right: 0;
       }
       .phones {
         display: flex;
