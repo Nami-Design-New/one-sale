@@ -37,7 +37,7 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-image: linear-gradient(97.65deg, #32b7c0 0.33%, #368f95 93.35%);
+  background: #777777;
   height: 300px;
   box-shadow: 0px 4px 10px 0px rgba(1, 115, 153, 0.2);
 }
